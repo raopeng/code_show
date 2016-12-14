@@ -1,3 +1,3 @@
 # code_show
-<<<<<<< hello world
+hello world
 python some demo
