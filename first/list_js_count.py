@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 #   author: RaoPeng
 arr = ['C','js','python','js','css','js','html','node']
 count = 0

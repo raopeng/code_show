@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 #   author:RaoPeng
 arr = [3,7,18,2,20,10000,99,1,54,100,4,50,120,200,450]
 count = 0
