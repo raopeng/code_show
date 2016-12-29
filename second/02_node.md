@@ -35,26 +35,30 @@ list可以直接相加
 	print arr1+arr2
 
 #####**3.list的操作，主要是增删改查**
-`arr = [1,2,3]`   
-增加:arr[1:1] = [6](用切片的方法)  
-     arr.append(4)(用append追加的方法)  
-     arr.insert(1,'raopeng')(用insert插入的方法)  
-删除:del arr[1]/arr.remove('1')/arr.pop(0)/arr[1:2] = [](用切片模拟)  
-修改:arr[0] = 'a'/arr[1:2] = ['a'](用切片模拟)  
-查询:in判断元素是否存在  
-     for遍历/arr[2](知道索引值，直接查询)  
-     print arr[0:3](切片模拟)  
-     count print arr.count(1)(统计1出现的次数)  
-     index print arr.index(2)(得到元素2的索引值)  
-其它:reverse   
-     arr.reverse();print arr(反转list)  
+
+	`arr = [1,2,3]`   
+	增加:arr[1:1] = [6](用切片的方法)  
+		 arr.append(4)(用append追加的方法)  
+		 arr.insert(1,'raopeng')(用insert插入的方法)  
+	删除:del arr[1]/arr.remove('1')/arr.pop(0)/arr[1:2] = [](用切片模拟)  
+	修改:arr[0] = 'a'/arr[1:2] = ['a'](用切片模拟)  
+	查询:in判断元素是否存在  
+		 for遍历/arr[2](知道索引值，直接查询)  
+		 print arr[0:3](切片模拟)  
+		 count print arr.count(1)(统计1出现的次数)  
+		 index print arr.index(2)(得到元素2的索引值)  
+	其它:reverse   
+		 arr.reverse();print arr(反转list)  
+
 #####**4.list的代码小例子**
 `例子1:让用户输入一个数组，如何最快的找到用户输入数字的索引`  
-方法用二分查找  
-伪代码:  
-      先拿出数组中间的数mid，和输入比较  
-      如果比mid大，就再后面一半数组，继续折半查找  
-      如果比mid小，就在前面的数组，折半查找  
+
+	方法用二分查找  
+	伪代码:  
+		先拿出数组中间的数mid，和输入比较  
+		如果比mid大，就再后面一半数组，继续折半查找  
+		如果比mid小，就在前面的数组，折半查找  
+
 
 	arr = [1,3,7,10,22,100,299,1000,2000,30000,40000]
 	num_to_find = 3
