@@ -1,12 +1,11 @@
-#**第二天笔记**
-
-###**list介绍**
-#####**1.查看所有元素--遍历**
+#第二天笔记
+###list介绍
+#####1.查看所有元素--遍历
 
 	for i in arr:
 		print i
 
-#####**2.list相关函数介绍**
+#####2.list相关函数介绍
 list是个自带函数，可以把字符串切割成列表
 
 	print list('hello')
@@ -35,7 +34,7 @@ list可以直接相加
 	arr2 = [4,5,6]
 	print arr1+arr2
 
-#####**3.list的操作，主要是增删改查**
+#####3.list的操作，主要是增删改查
 `arr = [1,2,3]`
 增加:arr[1:1] = [6](用切片的方法)
 	 arr.append(4)(用append追加的方法)
@@ -48,7 +47,7 @@ list可以直接相加
 	 count print arr.count(1)(统计1出现的次数)
 	 index print arr.index(2)(得到元素2的索引值)
 其它:reverse arr.reverse();print arr(反转list)
-#####**4.list的代码小例子**
+#####4.list的代码小例子
 `例子1:让用户输入一个数组，如何最快的找到用户输入数字的索引`
 方法用二分查找
 伪代码:
@@ -88,8 +87,8 @@ list可以直接相加
 	print count
 	print arr
 
-###**字符串介绍**
-#####**操作**
+###字符串介绍
+#####操作
 1.字符串可以+和*
 
 	print 'hello'+'world'
