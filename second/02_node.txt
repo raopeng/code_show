@@ -88,3 +88,24 @@ list可以直接相加
 	print count
 	print arr
 
+###**字符串介绍**
+#####**操作**
+1.字符串可以+和*
+
+	print 'hello'+'world'
+	print '*'*40
+
+2.split把字符串切割为list
+
+	print 'hello,world,rp'.split(',')
+
+3.join把list拼接成字符串
+
+	print ','.join(['hello','world','rp'])
+
+4.replace替换字符串的分割符
+
+	print 'hello,wor,ld'.replace(',','||')
+	my_str = 'hello,world:you,xxx,xxx:xxx'
+	print 'hello,reboot:you,xxx,xxx::xxx'.replace(':',',').split(',')
+
