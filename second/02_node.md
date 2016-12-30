@@ -36,7 +36,7 @@ list可以直接相加
 
 #####**3.list的操作，主要是增删改查**
 
-	`arr = [1,2,3]`   
+	arr = [1,2,3]   
 	增加:arr[1:1] = [6](用切片的方法)  
 		 arr.append(4)(用append追加的方法)  
 		 arr.insert(1,'raopeng')(用insert插入的方法)  
