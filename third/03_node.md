@@ -52,3 +52,72 @@
 		for k in my_dict:
 			print 'key:%s---------->value:%s' %(k,my_dict[k])
 
+######**2-3.字典get的用法**
+
+	获取值my_dict.get(key,默认值)
+		my_dict = {'name':'rp'}
+		print my_dict.get('age',12)
+
+######**2-4.字典fromkeys的用法**
+
+	fromkeys快速从list转成一个dict
+		print {}.fromkeys(['name','age'],'xxx')
+
+######**2-5.字典keys,values的用法**
+
+	my_dict = {'name':'reboot','type':'python'}
+	keys获取字典key的list
+		print my_dict.keys()
+	values获取value的list
+		print my_dict.values()
+
+######**2-6.字典items,popitem的用法**
+
+	items将字典的所有项以list的形式返回，list每一项是(key,value)
+		print my_dict.items()
+	popitem类似于list.pop,弹出一个随机的项
+		print my_dict.popitem()
+		print my_dict
+	注:字典也有pop方法
+		print my_dict.pop('name')
+
+######**2-7.字典setdefault的用法**
+
+	setdefault类似于get,可以设置默认值,并写入到原来的字典
+		my_dict.setdefault('name1','xxx')
+		print my_dict(发现name1写到字典里了)
+
+###**文件处理**
+#####**1.打开文件**
+	
+	open默认是读的打开方式,如果想写文件,要指明打开的模式,rwa
+	f = open('test.txt')
+	f = open('test.txt','w')
+		'w'模式是覆盖的。w模式打开文件的时候，就把文件清空了
+	f = open('user.txt','a')
+
+#####**2.读取文件**
+
+	read方法:
+		read方法可以读取固定长度的字符,不传的话读到文件结束
+		print f.read(5)
+		print f.read()
+	readline方法:
+		readline一次读一行,指针移到行尾
+		print f.readline()
+	readlines方法:
+		readlines一次全部读完,返回一个list,每行是一个元素,文件太大的时候不建议使用
+
+#####**3.写文件**
+
+	write方法:
+		write将我们需要的字符当成参数传递就可以了,但是换行需要我们自己指定('\n'字符)
+		f.write('test write sth\n')
+	writelines方法:
+		writelines传递给该函数一个字符串的list,它会把所有的字符串都写入文件,但是换行也需要我们自己指定('\n'字符)
+		f.writelines(['xxx\n','ddd'])
+
+#####**4.关闭文件**
+
+		f.close()
+
