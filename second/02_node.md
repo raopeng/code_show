@@ -111,3 +111,12 @@ list可以直接相加
 	my_str = 'hello,world:you,xxx,xxx:xxx'
 	print 'hello,reboot:you,xxx,xxx::xxx'.replace(':',',').split(',')
 
+5.字符串也是类数组的数据结构，但是不可修改，只能返回结果
+
+	name = 'hello'
+	print name[0]
+	print name[-1]
+	print name[1:4]
+	for n in name:
+		print n
+
