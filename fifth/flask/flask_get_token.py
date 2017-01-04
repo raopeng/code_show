@@ -6,6 +6,12 @@ from flask import Flask,request,render_template,redirect
 import get_token
 app = Flask(__name__)
 
+#输入appid和appsecret的界面
+@app.route('/')
+def index():
+	return render_template('input.html')
+
+#生成token的界面
 @app.route('/token')
 def token():
 	aid = request.args.get("appid")
