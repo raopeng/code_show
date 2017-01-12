@@ -6,11 +6,15 @@ from flask import Flask,request,render_template,redirect,session
 from fileutil import read_user,add_user,mod_user,del_user
 from check_user import check
 app = Flask(__name__)
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 #渲染登录界面
 @app.route('/')
 def index():
-	return render_template('login.html')
+	if 'username' in session:
+		return redirect('/userinfo')
+	else:
+		return render_template('login.html')
 
 #登录判断并跳转
 @app.route('/login')
@@ -20,6 +24,7 @@ def login():
 	error_msg = ''
 	if user and pwd:
 		if check(user=user,pwd=pwd)==0:
+			session['username'] = 'admin'
 			return redirect('/userinfo')
 		else:
 			error_msg = 'wrong user or password!'
@@ -27,11 +32,20 @@ def login():
 		error_msg = 'the user name or password cannot be empty!'
 	return render_template('login.html',error_msg=error_msg)
 
+#登出操作
+@app.route('/logout')
+def logout():
+	session.pop('username')
+	return redirect('/')
+
 #渲染显示用户信息页面
 @app.route('/userinfo')
 def show_user_info():
-	user_dict = read_user()
-	return render_template('userinfo.html',udict=user_dict)
+	#user_dict = read_user()
+	if 'username' in session:
+		return render_template('userinfo.html',udict=read_user())
+	else:
+		return redirect('/')
 
 #添加新用户
 @app.route('/adduser')
