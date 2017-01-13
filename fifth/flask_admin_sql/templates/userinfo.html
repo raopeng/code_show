@@ -1,0 +1,31 @@
+<h1 align="center">USER INFO</h1>
+<p align="center" style="font-size:20px">You can add remove or modify the user information!</p>
+<hr>
+<table border='1' align="center">
+	<tr>
+		<th>username</th>
+		<th>password</th>
+		<th>action</th>
+	</tr>
+	{% for user in ulist %}
+	<tr>
+		<td>{{user[0]}}</td>
+		<td>{{user[1]}}</td>
+		<td>
+			<a href='/deluser?user={{user[0]}}'>delete</a>
+			<a href='/updateuser?user={{user[0]}}'>update</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+<p>
+
+</p>
+<form action='/adduser' align="center" method="POST">
+	user:<input type="text" name='user'>
+	pwd:<input type="text" name='password'>
+	<input type="submit" value='add'>
+</form>
+<form align="center">
+	<a href='/logout'>logout</a>
+</form>
