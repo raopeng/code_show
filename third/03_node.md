@@ -121,3 +121,21 @@
 
 		f.close()
 
+#####**5.生产环境中的打开文件方式**
+
+	with open('/路径/文件名') as f:
+		print f.readline()
+	这样的好处是不用担心忘记关闭文件而导致的内存一直被占用，可以省去了f.close()
+
+#####**6.文件指针**
+
+	seek函数来控制指针的位置
+	seek(移动的字符，移动的相对位置【0是文件的开始，1是现在的位置，2是文件的结尾】)，写程序是可以将这三个定义为变量(FILE_START = 0,FILE_NOW = 1,FILE_END = 2)
+	with open('test.txt') as f:
+		print f.read(3)
+		f.seek(-2,FILE_END)
+		print f.read(3)
+	tell函数用来返回现在文件指针的位置
+	print f.tell()
+
+
