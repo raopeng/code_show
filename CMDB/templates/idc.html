@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+		<div class="col-md-12">
+			<table class="table table-bordered">
+				<thead>
+					<tr><th>id</th><th>idc_addr</th></tr>
+				</thead>
+				<tbody id='idc_table'>
+			
+				</tbody>
+			</table>
+		</div>
+</div>
+
+<!--
+add idc table,and submit new idc_addr
+-->
+	<form id='addidc-form' class="form-inline">
+		<div class="form-group">
+			<div class="input-group">
+				<input type="text" class="form-control" name='name' placeholder="idc_addr">
+			</div>
+		</div>
+		<button type="submit" id='add-btn' class="btn btn-primary">add</button>
+	</form>
+
+	<!--
+	<form id='addidc-form'>
+		<input type='text' name='name'>
+		<input type='submit' value='add'>
+	</form>
+	-->
+{% endblock %}
+
+{% block js %}
+	<script>
+		$('#addidc-form').on('submit',function(){
+			var idcname = $('#addidc-form').find('[name="name"]')
+			console.log(idcname)
+			$.post('/addidc',{name:idcname.val()},function(){
+				init_page()
+				idcname.val('')
+			})
+			
+			return false 
+		})
+		function init_page(){
+		
+			$.getJSON('/idclist',function(res){
+				var idc_str = ''
+				$.each(res,function(i,v){
+					idc_str += '<tr>'
+					idc_str += '<td>'+v[0]+'</td>'
+					idc_str += '<td>'+v[1]+'</td>'
+					idc_str += '</tr>'
+					})
+				console.log(idc_str)
+				$('#idc_table').html(idc_str)
+			})
+		}
+		init_page()
+	</script>
+{% endblock %}

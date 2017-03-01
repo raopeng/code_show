@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		.nav-active{
+			color: red;
+			background:yellow;
+			border-radius:10px;
+		}
+	</style>
+</head>
+<body>
+	<div>头部</div>
+	<div class="sidebar">
+		<a href="/a">page A</a>
+		<a href="/b">page B</a>
+	</div>
+	<br>
+	{% block body %}
+
+	{% endblock %}
+	<div>脚注</div>
+	{% block raopeng %}
+
+	{% endblock %}
+	<script src='/static/jquery.js'></script>
+	<script>
+		var path = location.pathname
+		$(`[href="${path}"]`).addClass('nav-active')
+	</script>
+</body>
+</html>
